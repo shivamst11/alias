@@ -8,20 +8,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "lint": "eslint ."
-  },
-  "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "eslint --ext .tsx --ext .ts ./src --fix"
-    ],
-    "./src/**": [
-      "prettier --write ."
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "lint": "eslint .",
+    "pretest": "./node_modules/.bin/eslint --ignore-path .gitignore . --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "expo": "~44.0.0",
