@@ -14,8 +14,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run pretest"
     }
+  },
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/eslint — fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "expo": "~44.0.0",
