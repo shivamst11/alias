@@ -8,19 +8,20 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "lint": "eslint .",
-    "pretest": "./node_modules/.bin/eslint --ignore-path .gitignore . --fix",
+    "lint": "eslint ."
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --ext .tsx --ext .ts ./src --fix"
+    ],
+    "./src/**": [
+      "prettier --write ."
+    ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run pretest"
+      "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "*.js": [
-      "./node_modules/.bin/eslint — fix",
-      "git add"
-    ]
   },
   "dependencies": {
     "expo": "~44.0.0",
