@@ -18,12 +18,7 @@
       "pre-commit": "npm run start"
     }
   },
-  "lint-staged": {
-    "*.js": [
-      "npm run pretest",
-      "git add"
-    ]
-  },
+
 
   "dependencies": {
     "expo": "~44.0.0",
